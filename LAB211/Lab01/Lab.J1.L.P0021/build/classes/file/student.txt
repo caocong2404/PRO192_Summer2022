@@ -1,0 +1,24 @@
+|SA318   |CONG                |JAVA    |1  |
+
+|SA826   |TRE                 |PYTHON  |2  |
+
+|SA273   |TRAU                |SQL     |3  |
+
+|SA394   |CONG                |JAVA    |1  |
+
+|SA32    |TRE                 |PYTHON  |2  |
+
+|SA477   |TRAU                |SQL     |3  |
+
+|SA207   |CONG                |JAVA    |1  |
+
+|SA198   |TRE                 |PYTHON  |2  |
+
+|SA309   |TRAU                |SQL     |3  |
+
+|SA708   |CONG                |JAVA    |1  |
+
+|SA890   |TRE                 |PYTHON  |2  |
+
+|SA539   |TRAU                |SQL     |3  |
+
