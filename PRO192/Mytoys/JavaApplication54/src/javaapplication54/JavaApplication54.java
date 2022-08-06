@@ -1,6 +1,8 @@
 
 package javaapplication54;
 
+import java.util.*;
+
 
 public class JavaApplication54 {
 
@@ -26,6 +28,7 @@ public class JavaApplication54 {
         //
     }
     
+    //check palind
      public boolean checkPalindrom(String t) {
         String palind = "";
         for (int i = t.length() - 1; i >= 0; i--) {
@@ -35,8 +38,9 @@ public class JavaApplication54 {
             return true;
         return false;
     }
-     
-     public boolean checkPrime(int primeNumber){
+    
+    //check prime
+    public boolean checkPrime(int primeNumber){
          if (primeNumber <= 1)
              return false;
          
@@ -46,5 +50,36 @@ public class JavaApplication54 {
          }
          return true;
      }
+    
+    //frequen
+    public String mostFre(String str)
+    {
+        String arr[] = str.split("\\s+");
+        List<String> list = Arrays.asList(arr);
+        int count, maxCount = 0;
+        String repeatName = "";
+        
+        for (String name : list) {
+            count = 1;
+            
+            for (String counting : list) {
+                if ((name.trim()).equals(counting.trim()))
+                    count++;
+            
+                if (maxCount < count) {
+                    maxCount = count;
+                    repeatName = name;
+                }
+            }
+        }
+        return repeatName;
+    }
+
+    
+    public String f2(String str) {
+        String check = mostFre(str);       
+        return (str.replace(check, "T"));        
+    }
+     
     
 }

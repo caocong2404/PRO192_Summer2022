@@ -112,6 +112,38 @@ class MyString implements IString {
         return true;
     }
     
+    public String mostFre1(String str){
+        String arr[] = str.split("\\s+");
+        List<String> list = Arrays.asList(arr);
+        int count = 0;
+        int maxCount = 0;
+        String repeatWord = "";
+        
+        for (String x : list) {
+            count = 1;
+            for (String countingName : list) {
+                if (x.equals(countingName))
+                    count++;
+            }
+            
+            if (count > maxCount){
+                maxCount = count;
+                repeatWord = x;
+            }
+        }
+        
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).equals(repeatWord))
+                list.set(i, "T");
+        }
+        
+        String result = "";
+        for (String x : list) {
+            result += x + " ";
+        }
+        return result.trim();
+    }
+    
     public String mostFre(String str)
     {
         String arr[] = str.split("\\s+");
@@ -140,6 +172,48 @@ class MyString implements IString {
         String check = mostFre(str);       
         return (str.replace(check, "T"));        
     }
+
+    public boolean checkPalind(String str){
+        String palind = "";
+        for (int i = str.length() - 1; i >= 0; i--) {
+            palind += str.charAt(i);
+        }
+        
+        if (str.equals(palind))
+            return true;
+        return false;
+    }
+    
+    public boolean checkFrequen(String str){
+        int count = 0;
+        for (int i = 0; i < str.length() - 1; i++) {
+            if ((str.charAt(i + 1) - str.charAt(i)) == 1)
+                count++;
+        }
+        if (count == str.length() - 1)
+            return true;
+        return false;
+    }
+    
+    @Override
+    public String f3(String str) {
+        String arr[] = str.split("\\s+");
+        String result = "";
+        
+        for (int i = 0; i < arr.length; i++) {
+            if (checkPalind(arr[i]) && checkFrequen(arr[i]))
+            {
+                arr[i] = "AA";
+                break;
+            }
+        }
+
+        
+        for (String x : arr) {
+            result += x + " ";
+        }
+        return result.trim();
+    }
 }
 
 
@@ -152,6 +226,7 @@ interface IA {
 interface IString {
     public int f1(String str);
     public String f2(String str);
+    public String f3(String str);
 }
 
 public class PracticeFinal {
@@ -195,8 +270,12 @@ public class PracticeFinal {
 //            String s = "a2b35c68";
 //            System.out.println(mystring.f1(s));
                 
-        String s = "cd ab xyz ab xyz ab cd";
-        System.out.println(mystring.f2(s));
+        String s1 = "cd ab xyz ab xyz ab cd";
+        String s2 = "cd abcba xyzyz 12321 xyz ab cd";
+        System.out.println(mystring.f2(s1));
+        System.out.println(mystring.mostFre1(s1));
+        System.out.println(mystring.f3(s2));
+        
                
         }
 }

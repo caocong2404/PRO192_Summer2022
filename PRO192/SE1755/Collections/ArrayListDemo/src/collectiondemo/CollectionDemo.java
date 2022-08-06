@@ -37,13 +37,18 @@ public class CollectionDemo {
         v.remove(2);
         System.out.println(v);
         
-        System.out.println();
-        for (int i = 0; i < v.size(); i++) {
-            if (i == (v.size() - 1))
-                System.out.println(v.get(i));
-            else
-                System.out.println(v.get(i) + ", ");
-        }
+        v.parallelStream().forEach(System.out::println);
+        
+        Integer b = new Integer(0);
+        Integer c = new Integer(0);
+        System.out.println(b==c); 
+//        System.out.println();
+//        for (int i = 0; i < v.size(); i++) {
+//            if (i == (v.size() - 1))
+//                System.out.println(v.get(i));
+//            else
+//                System.out.println(v.get(i) + ", ");
+//        }
     }
 
 }

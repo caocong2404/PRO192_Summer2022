@@ -30,6 +30,12 @@ public class SubStringandPool {
         String a5 = "Hello";
         String a6 = "HellO";
         System.out.println("Hello == HellO " + (a5 == a6));
+        
+        String s = "Chao mung cac ban";
+        String arr[] = s.split("\\s+");
+        for (String x : arr) {
+            System.out.println(x.length());
+        }
 
 //        Student s1 = new Student("123", a6, 0, a6);
 //        System.out.println(s1.toString());
